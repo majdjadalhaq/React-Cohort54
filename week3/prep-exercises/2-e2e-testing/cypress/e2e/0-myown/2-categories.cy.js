@@ -60,21 +60,15 @@ describe("Categories", () => {
 
       // 3. Check that that category is selected
       cy.get('[data-selected="true"]').should("have.length", 1);
-      cy.get('[data-elementid="electronics"]').should((el) => {
-        expect(el.attr("data-selected")).to.equal("true");
-      });
+      cy.checkCategorySelection("electronics", true);
 
       // 4. Click a different category (jewelery)
       cy.get('[data-elementid="jewelery"]').click();
 
       // 5. Check that only the new category is selected
       cy.get('[data-selected="true"]').should("have.length", 1);
-      cy.get('[data-elementid="jewelery"]').should((el) => {
-        expect(el.attr("data-selected")).to.equal("true");
-      });
-      cy.get('[data-elementid="electronics"]').should((el) => {
-        expect(el.attr("data-selected")).to.equal("false");
-      });
+      cy.checkCategorySelection("jewelery", true);
+      cy.checkCategorySelection("electronics", false);
     });
   });
 });
