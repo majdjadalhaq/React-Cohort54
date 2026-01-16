@@ -1,6 +1,5 @@
-import { createContext, useState, useContext } from 'react';
-
-const FavoritesContext = createContext();
+import { useState } from 'react';
+import FavoritesContext from './FavoritesContext';
 
 export const FavoritesProvider = ({ children }) => {
     const [favoriteIds, setFavoriteIds] = useState([]);
@@ -21,5 +20,3 @@ export const FavoritesProvider = ({ children }) => {
         </FavoritesContext.Provider>
     );
 };
-
-export const useFavorites = () => useContext(FavoritesContext);

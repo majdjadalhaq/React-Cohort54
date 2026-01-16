@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { FavoritesProvider } from './context/FavoritesContext'
+import { FavoritesProvider } from './context/FavoritesProvider'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import ProductDetail from './pages/ProductDetail'
